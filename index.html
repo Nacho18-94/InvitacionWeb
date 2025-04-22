@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invitación al Evento</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+</head>
+
+<body>
+
+    <header class="header fade-up">
+        <div class="banner">
+            <span class="nombres-evento">Camila & Nacho</span>
+            <h1>¡Nos Casamos!</h1>
+            <p>Una historia, un amor, un día especial</p>
+        </div>
+        <img src="./Imagen1.jpeg" alt="Banner" class="background-banner" />
+    </header>
+    <section id="cuenta-regresiva" class="section fade-up">
+        <h2>Faltan...</h2>
+        <div id="contador" class="contador">
+            <div><span id="dias">00</span>
+                <p>Días</p>
+            </div>
+            <div><span id="horas">00</span>
+                <p>Horas</p>
+            </div>
+            <div><span id="minutos">00</span>
+                <p>Min</p>
+            </div>
+            <div><span id="segundos">00</span>
+                <p>Seg</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="frase" class="section section-frase fade-left">
+        <blockquote class="frase-evento">
+            "El amor no consiste en mirarse el uno al otro, sino en mirar juntos en la misma dirección."
+            <br><br>— Antoine de Saint-Exupéry
+        </blockquote>
+    </section>
+
+    <section id="evento" class="section section-evento fade-up">
+        <h2>Detalles del Evento</h2>
+
+        <div class="evento-cards">
+
+
+            <div class="evento-card fade-right">
+                <div class="evento-icon"><i class="fa-solid fa-church"></i></div>
+                <div class="evento-info">
+                    <h3>Ceremonia</h3>
+                    <p><strong>Hora:</strong> 18:00 hs</p>
+                    <p><strong>Lugar:</strong> Parroquia San Juan Bautista</p>
+                </div>
+            </div>
+
+            <div class="evento-card fade-right">
+                <div class="evento-icon"><i class="fa-solid fa-champagne-glasses"></i></div>
+                <div class="evento-info">
+                    <h3>Fiesta</h3>
+                    <p><strong>Hora:</strong> 20:00 hs</p>
+                    <p><strong>Lugar:</strong> Salón Ébano</p>
+                </div>
+            </div>
+
+            <div class="evento-card fade-right">
+                <div class="evento-icon"><i class="fa-solid fa-user-tie"></i></div>
+                <div class="evento-info">
+                    <h3>Dress Code</h3>
+                    <p>Formal elegante</p>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+
+    <section id="confirmacion" class="section fade-up">
+        <h2>Confirmar Asistencia</h2>
+
+        <div class="form-card">
+            <form action="#" method="POST">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required />
+
+                <label for="asistencia">¿Asistirás?</label>
+                <select id="asistencia" name="asistencia" required>
+                    <option value="">Seleccionar...</option>
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                </select>
+
+                <button type="submit">Confirmar</button>
+            </form>
+            <p id="mensaje-confirmacion" class="mensaje-exito" style="display: none;">¡Gracias por confirmar tu
+                asistencia! 💌</p>
+
+        </div>
+    </section>
+
+
+    <section id="regalos" class="section fade-left">
+        <h2>Recomendaciones de Regalos</h2>
+        <ul>
+            <li>Sobre 💌</li>
+            <li>Transferencia bancaria 💳</li>
+            <li>Regalo físico 🎁 (opcional)</li>
+        </ul>
+    </section>
+
+    <section id="mapa" class="section fade-up">
+        <h2>¿Dónde nos vemos?</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=..." allowfullscreen="" loading="lazy"></iframe>
+    </section>
+    <section id="galeria" class="seccion">
+        <div class="contenedor-galeria">
+            <h2>Galería de Fotos</h2>
+            <div class="galeria">
+                <img src="./Imagen12.jpeg" alt="Foto 1" class="foto">
+                <img src="./Imagen14.jpeg" alt="Foto 2" class="foto">
+                <img src="./Imagen15.jpeg" alt="Foto 3" class="foto">
+                <img src="./Imagen26.jpeg" alt="Foto 4" class="foto">
+                <!-- Agrega más fotos según sea necesario -->
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>Creado con 💻 por <a href="#">Nacho</a></p>
+    </footer>
+    <audio id="musica-fondo" loop autoplay>
+        <source src="./Birds.mp3" type="audio/mp3">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script>
+        document.addEventListener('click', () => {
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

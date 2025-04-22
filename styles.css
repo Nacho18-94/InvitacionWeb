@@ -1,0 +1,432 @@
+/* ====================
+   RESET BÁSICO
+==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+/* ====================
+   HEADER Y BANNER
+==================== */
+header {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.background-banner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    z-index: 0;
+}
+
+.banner {
+    position: absolute;
+    z-index: 1;
+    color: #fff;
+}
+
+.banner h1,
+.nombres-evento {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5em;
+    color: #ffffff;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 1);
+}
+
+.banner h1 {
+    font-size: 4em;
+    margin-bottom: 20px;
+}
+
+.banner p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5em;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 1);
+    font-style: italic;
+}
+
+/* ====================
+   SECCIONES GENERALES
+==================== */
+.section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#frase,
+#confirmacion,
+#mapa {
+    background-color: #607466;
+    color: #e0e0e0;
+}
+
+#evento,
+#regalos,
+#cuenta-regresiva,
+#galeria {
+    background-color: #343E3D;
+    color: #fff;
+}
+
+h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5em;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* ====================
+   FORMULARIO DE CONFIRMACIÓN
+==================== */
+.form-card {
+    background: linear-gradient(145deg, #5a635a, #6c7d6c);
+    border-radius: 18px;
+    padding: 30px 25px;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+form label {
+    font-weight: bold;
+    color: #f0f0f0;
+    font-size: 1.1rem;
+    text-align: left;
+}
+
+form input,
+form select {
+    padding: 12px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+form input::placeholder {
+    color: #777;
+}
+
+form button {
+    background-color: #343E3D;
+    color: #fff;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #607466;
+}
+
+.mensaje-exito {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #4caf50;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: fadeIn 0.6s ease forwards;
+}
+
+/* ====================
+   TIMELINE (DETALLES EVENTO)
+==================== */
+.timeline {
+    max-width: 500px;
+    margin: 40px auto;
+    padding-left: 30px;
+    border-left: 2px solid #ccc;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.timeline-icon {
+    position: absolute;
+    left: -30px;
+    top: 0;
+    background: #607466;
+    color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timeline-content h3 {
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+/* ====================
+   ANIMACIONES DE SCROLL
+==================== */
+.fade-up,
+.fade-left,
+.fade-right {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease;
+}
+
+.fade-left {
+    transform: translateX(-30px);
+}
+
+.fade-right {
+    transform: translateX(30px);
+}
+
+.fade-up.show,
+.fade-left.show,
+.fade-right.show {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+/* ====================
+   FRASE DESTACADA
+==================== */
+.frase-evento {
+    font-family: 'Dancing Script', cursive;
+    font-style: italic;
+    font-size: 2em;
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.6;
+    text-align: center;
+    color: #f0f0f0;
+    padding: 60px 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* ====================
+   DETALLES DEL EVENTO (CARDS)
+==================== */
+.evento-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    margin: 30px auto;
+    max-width: 600px;
+}
+
+.evento-card {
+    background: linear-gradient(145deg, #5a635a, #6c7d6c);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 18px;
+    padding: 25px 20px;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.evento-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+}
+
+.evento-icon {
+    font-size: 2.4rem;
+    flex-shrink: 0;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+}
+
+.evento-info {
+    flex-grow: 1;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.evento-info h3 {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.evento-info p {
+    font-size: 1.1rem;
+    margin: 4px 0;
+}
+
+/* ====================
+   CUENTA REGRESIVA
+==================== */
+.contador {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 2em;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.contador div {
+    background-color: #607466;
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.contador span {
+    display: block;
+    font-size: 1.8em;
+}
+
+/* ====================
+   GALERÍA DE FOTOS
+==================== */
+#galeria {
+    padding: 20px;
+}
+
+.contenedor-galeria {
+    text-align: center;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.foto {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    filter: grayscale(80%);
+}
+
+.foto:hover {
+    transform: scale(1.1);
+}
+
+/* ====================
+   FOOTER
+==================== */
+footer {
+    background-color: #121212;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* ====================
+   LISTAS Y EMBED MAP
+==================== */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin: 10px 0;
+    font-size: 1.1em;
+    color: #dcdcdc;
+}
+
+iframe {
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* ====================
+   MEDIA QUERIES
+==================== */
+@media (max-width: 768px) {
+    .evento-cards {
+        gap: 10px;
+    }
+
+    .evento-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .evento-icon {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+}
+
+/* ====================
+   ANIMACIÓN GLOBAL
+==================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
