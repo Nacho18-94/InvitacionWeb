@@ -22,6 +22,7 @@
         </div>
         <img src="./Imagen1.jpeg" alt="Banner" class="background-banner" />
     </header>
+
     <section id="cuenta-regresiva" class="section fade-up">
         <h2>Faltan...</h2>
         <div id="contador" class="contador">
@@ -45,6 +46,19 @@
             "El amor no consiste en mirarse el uno al otro, sino en mirar juntos en la misma dirección."
             <br><br>— Antoine de Saint-Exupéry
         </blockquote>
+    </section>
+
+    <section id="galeria" class="seccion">
+        <div class="contenedor-galeria">
+            <h2>Galería de Fotos</h2>
+            <div class="galeria">
+                <img src="./Imagen12.jpeg" alt="Foto 1" class="foto">
+                <img src="./Imagen14.jpeg" alt="Foto 2" class="foto">
+                <img src="./Imagen15.jpeg" alt="Foto 3" class="foto">
+                <img src="./Imagen26.jpeg" alt="Foto 4" class="foto">
+                <!-- Agrega más fotos según sea necesario -->
+            </div>
+        </div>
     </section>
 
     <section id="evento" class="section section-evento fade-up">
@@ -108,36 +122,56 @@
     </section>
 
 
-    <section id="regalos" class="section fade-left">
+    <section id="regalos" class="section fade-up">
         <h2>Recomendaciones de Regalos</h2>
-        <ul>
-            <li>Sobre 💌</li>
-            <li>Transferencia bancaria 💳</li>
-            <li>Regalo físico 🎁 (opcional)</li>
-        </ul>
+        <div class="regalos-container">
+
+            <div class="regalo-card">
+                <div class="icono-regalo"><i class="fas fa-university"></i></div>
+                <div class="texto-regalo">
+                    <p>Alias: <span id="alias">misregalos.casamiento</span></p>
+                    <button onclick="copiarTexto(this, 'alias')">Copiar Alias</button>
+                    <span class="copiado-msg">¡Copiado!</span>
+                </div>
+            </div>
+
+            <div class="regalo-card">
+                <div class="icono-regalo"><i class="fas fa-credit-card"></i></div>
+                <div class="texto-regalo">
+                    <p>CBU: <span id="cbu">0000003100032598720001</span></p>
+                    <button onclick="copiarTexto(this, 'cbu')">Copiar CBU</button>
+                    <span class="copiado-msg">¡Copiado!</span>
+                </div>
+            </div>
+
+            <div class="regalo-card">
+                <div class="icono-regalo"><i class="fas fa-envelope"></i></div>
+                <div class="texto-regalo">
+                    <p>También podés entregarnos un sobre físico ese día.</p>
+                </div>
+            </div>
+
+            <div class="regalo-card">
+                <div class="icono-regalo"><i class="fas fa-heart"></i></div>
+                <div class="texto-regalo">
+                    <p>Tu presencia es el mejor regalo que podés hacernos ❤️</p>
+                </div>
+            </div>
+
+        </div>
     </section>
+
+
 
     <section id="mapa" class="section fade-up">
         <h2>¿Dónde nos vemos?</h2>
         <iframe src="https://www.google.com/maps/embed?pb=..." allowfullscreen="" loading="lazy"></iframe>
     </section>
-    <section id="galeria" class="seccion">
-        <div class="contenedor-galeria">
-            <h2>Galería de Fotos</h2>
-            <div class="galeria">
-                <img src="./Imagen12.jpeg" alt="Foto 1" class="foto">
-                <img src="./Imagen14.jpeg" alt="Foto 2" class="foto">
-                <img src="./Imagen15.jpeg" alt="Foto 3" class="foto">
-                <img src="./Imagen26.jpeg" alt="Foto 4" class="foto">
-                <!-- Agrega más fotos según sea necesario -->
-            </div>
-        </div>
-    </section>
     <footer>
         <p>Creado con 💻 por <a href="#">Nacho</a></p>
     </footer>
     <audio id="musica-fondo" loop autoplay>
-        <source src="./Birds.mp3" type="audio/mp3">
+        <source src="./8-baladas en ingles-one more night-phill collin(2).mp3" type="audio/mp3">
         Tu navegador no soporta el elemento de audio.
     </audio>
 
@@ -153,7 +187,6 @@
             });
         });
     </script>
-
 </body>
 
 </html>

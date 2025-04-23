@@ -28,6 +28,18 @@ header {
     overflow: hidden;
 }
 
+header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    /* negro con 40% de opacidad */
+    z-index: 0;
+}
+
 .background-banner {
     position: absolute;
     width: 100%;
@@ -429,5 +441,93 @@ iframe {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* ====================
+   RECOMENDACIONES DE REGALOS
+==================== */
+.regalos-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+    justify-content: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.regalo-card {
+
+    color: #fff;
+    border-radius: 18px;
+    padding: 25px 20px;
+    width: 100%;
+    max-width: 550px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    text-align: left;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+.icono-regalo {
+    font-size: 2rem;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+}
+
+.texto-regalo p {
+    margin: 5px 0;
+    font-size: 1.1rem;
+}
+
+.texto-regalo button {
+    margin-top: 10px;
+    padding: 8px 14px;
+    background-color: #343E3D;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease;
+}
+
+.texto-regalo button:hover {
+    background-color: #607466;
+}
+
+.copiado-msg {
+    display: none;
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: #c8f7c5;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.copiado-msg.mostrar-copiado {
+    display: block;
+}
+
+/* Responsive ajustes */
+@media (max-width: 768px) {
+    .regalo-card {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .icono-regalo {
+        font-size: 1.8rem;
+    }
+
+    .texto-regalo button {
+        width: 100%;
     }
 }

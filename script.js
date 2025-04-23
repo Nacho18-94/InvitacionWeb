@@ -57,3 +57,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.addEventListener("click", iniciarMusica);
 });
+
+/*FUNCION COPIAR TEXTO*/
+function copiarTexto(boton, id) {
+    const texto = document.getElementById(id).textContent;
+    navigator.clipboard.writeText(texto).then(() => {
+        const mensaje = boton.nextElementSibling;
+        mensaje.classList.add("mostrar-copiado");
+
+        setTimeout(() => {
+            mensaje.classList.remove("mostrar-copiado");
+        }, 2000); // 2 segundos visible
+    });
+}
