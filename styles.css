@@ -427,6 +427,19 @@ iframe {
     h2 {
         font-size: 2em;
     }
+
+    .banner h1,
+    .nombres-evento {
+        font-size: 3em;
+    }
+
+    .banner h1 {
+        font-size: 3.5em;
+    }
+
+    .banner p {
+        font-size: 1em;
+    }
 }
 
 /* ====================
@@ -530,4 +543,28 @@ iframe {
     .texto-regalo button {
         width: 100%;
     }
+}
+
+/* ====================
+   BOTÓN AUDIO
+==================== */
+.boton-audio {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    background-color: #607466;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 1.5em;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.boton-audio:hover {
+    background-color: #495b4e;
 }

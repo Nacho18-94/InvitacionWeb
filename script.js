@@ -45,18 +45,36 @@ function actualizarContador() {
 
 setInterval(actualizarContador, 1000);
 
-document.addEventListener("DOMContentLoaded", function () {
+// ACTIVACION MÚSICA
+document.addEventListener("DOMContentLoaded", () => {
     const musica = document.getElementById("musica-fondo");
+    const btnAudio = document.getElementById("btn-audio");
+    const icono = btnAudio.querySelector("i");
 
-    function iniciarMusica() {
-        musica.play().catch(function (e) {
-            console.log("El navegador bloqueó la reproducción automática.");
-        });
-        document.removeEventListener("click", iniciarMusica);
-    }
+    // Activar audio tras primer clic en pantalla (evita bloqueo automático)
+    let iniciado = false;
+    const iniciarMusica = () => {
+        if (!iniciado) {
+            musica.play().catch(err => console.log("Audio bloqueado:", err));
+            iniciado = true;
+        }
+    };
+    document.addEventListener("click", iniciarMusica, { once: true });
 
-    document.addEventListener("click", iniciarMusica);
+    // Funcionalidad botón play/pause
+    btnAudio.addEventListener("click", () => {
+        if (musica.paused) {
+            musica.play();
+            icono.classList.remove("fa-play");
+            icono.classList.add("fa-pause");
+        } else {
+            musica.pause();
+            icono.classList.remove("fa-pause");
+            icono.classList.add("fa-play");
+        }
+    });
 });
+
 
 /*FUNCION COPIAR TEXTO*/
 function copiarTexto(boton, id) {
