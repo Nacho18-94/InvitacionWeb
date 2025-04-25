@@ -46,34 +46,40 @@ function actualizarContador() {
 setInterval(actualizarContador, 1000);
 
 // ACTIVACION MÚSICA
-document.addEventListener("DOMContentLoaded", () => {
-    const musica = document.getElementById("musica-fondo");
-    const btnAudio = document.getElementById("btn-audio");
-    const icono = btnAudio.querySelector("i");
+const musica = document.getElementById('musica-fondo');
+const btnAudio = document.getElementById('btn-audio');
+const icono = btnAudio.querySelector('i');
 
-    // Activar audio tras primer clic en pantalla (evita bloqueo automático)
-    let iniciado = false;
-    const iniciarMusica = () => {
-        if (!iniciado) {
-            musica.play().catch(err => console.log("Audio bloqueado:", err));
-            iniciado = true;
-        }
-    };
-    document.addEventListener("click", iniciarMusica, { once: true });
+let musicaIniciada = false;
 
-    // Funcionalidad botón play/pause
-    btnAudio.addEventListener("click", () => {
+btnAudio.addEventListener('click', () => {
+    if (!musicaIniciada) {
+        musica.play().then(() => {
+            musicaIniciada = true;
+            icono.classList.remove('fa-play');
+            icono.classList.add('fa-pause');
+        }).catch((error) => {
+            console.log('El navegador bloqueó la reproducción automática:', error);
+        });
+    } else {
         if (musica.paused) {
             musica.play();
-            icono.classList.remove("fa-play");
-            icono.classList.add("fa-pause");
+            icono.classList.remove('fa-play');
+            icono.classList.add('fa-pause');
         } else {
             musica.pause();
-            icono.classList.remove("fa-pause");
-            icono.classList.add("fa-play");
+            icono.classList.remove('fa-pause');
+            icono.classList.add('fa-play');
         }
-    });
+    }
 });
+document.addEventListener('click', () => {
+    if (!musicaIniciada) {
+        musica.play();
+        musicaIniciada = true;
+    }
+}, { once: true });
+
 
 
 /*FUNCION COPIAR TEXTO*/
