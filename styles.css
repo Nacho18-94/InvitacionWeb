@@ -426,7 +426,7 @@ iframe {
     /* Eliminar borde de la tarjeta */
     box-shadow: none;
     /* Eliminar sombra de la tarjeta */
-    padding: 0;
+    padding-bottom: 15px;
     /* Eliminar padding de la tarjeta */
     width: auto;
     /* Ajustar el ancho de la tarjeta */
